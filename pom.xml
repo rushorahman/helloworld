@@ -22,12 +22,11 @@
     <module>webapp</module>
   </modules>
 
-  <distributionManagement>
+ <distributionManagement>
     <site>
-      <id>test_repo</id>
-      <name>maven_demo_project</name>
-      <url>http://104.197.249.127:8081/repository/maven-demo-repo/</url>
-      <status>deployed</status>
+      <id>site-server</id>
+      <name>Test Project Site</name>
+      <url>file:///tmp/maven-project-site</url>
     </site>
   </distributionManagement>
 
