@@ -12,9 +12,8 @@
   <url>http://www.example.com</url>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
   </properties>
 
   <modules>
@@ -22,11 +21,11 @@
     <module>webapp</module>
   </modules>
 
- <distributionManagement>
+  <distributionManagement>
     <site>
       <id>site-server</id>
       <name>Test Project Site</name>
-      <url>http://104.197.249.127:8081/repository/maven-demo-repo/</url>
+      <url>file:///tmp/maven-project-site</url>
     </site>
   </distributionManagement>
 
@@ -35,10 +34,17 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
+          <source>7</source>
+	  <target>7</target>
         </configuration>
       </plugin>
+        
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>3.6.0.1398</version>
+      </plugin>
+
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
         <configuration>
@@ -93,7 +99,7 @@
 
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>2.3.2</version>
+          <version>3.8.1</version>
         </plugin>
 
         <plugin>
@@ -216,5 +222,8 @@
   <prerequisites>
     <maven>3.0.3</maven>
   </prerequisites>
+
+</project>
+
 
 </project>
